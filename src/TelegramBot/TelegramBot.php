@@ -42,6 +42,10 @@ class TelegramBot {
     return $this->pluginManager;
   }
 
+  public function getDB() {
+    return $this->db;
+  }
+
   public function processUpdate($update) {
     if (empty($update)) throw new Exception('Empty update!');
     if (!is_array($update)) $updateObj = TA_Update::createFromJson($this->api, $update);
